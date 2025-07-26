@@ -13,9 +13,10 @@ A macOS Finder service that adds "Open with VS Code" and "Open with VS Code Insi
 
 ### Installation
 
-1. Navigate to this directory in Terminal:
+1. Clone the repository:
    ```bash
-   cd /path/to/vscode-finder-service
+   git clone https://github.com/neuvecom/vscode-finder-service.git
+   cd vscode-finder-service
    ```
 
 2. Run the installation script:
@@ -85,9 +86,10 @@ Finderでディレクトリを選択した状態で、右クリックメニュ�
 
 ## インストール
 
-1. ターミナルでこのディレクトリに移動:
+1. リポジトリをクローン:
    ```bash
-   cd /Users/yoshiharusato/MyProducts/MISC/VSCodeStarter
+   git clone https://github.com/neuvecom/vscode-finder-service.git
+   cd vscode-finder-service
    ```
 
 2. インストールスクリプトを実行:
