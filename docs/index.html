@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VS Code Finder Service - macOS Finderの右クリックメニューからVS Codeでフォルダを開くサービス">
+    <title>VS Code Finder Service</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>VS Code Finder Service</h1>
+            <p class="subtitle">macOS Finderの右クリックメニューからVS Codeでフォルダを開く</p>
+            <div class="lang-switch">
+                <a href="#japanese" class="active">日本語</a>
+                <a href="#english">English</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 日本語セクション -->
+    <section id="japanese" class="content-section">
+        <div class="container">
+            <div class="hero">
+                <h2>macOS FinderからワンクリックでVS Codeを起動</h2>
+                <p>Finderでディレクトリを選択した状態で、右クリックメニューから「VS Codeで開く」「VS Code Insidersで開く」を選択できるようにするサービスです。</p>
+                <div class="cta-buttons">
+                    <a href="https://github.com/neuvecom/vscode-finder-service" class="btn btn-primary">GitHub でダウンロード</a>
+                    <a href="#install-ja" class="btn btn-secondary">インストール方法</a>
+                </div>
+            </div>
+
+            <div class="features">
+                <h2>機能</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>🚀 簡単起動</h3>
+                        <p>Finderの右クリックメニューから直接VS Codeを起動できます</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>⚡ 高速アクセス</h3>
+                        <p>ターミナルを開かずに、選択したフォルダをすぐに開けます</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🔧 両バージョン対応</h3>
+                        <p>VS CodeとVS Code Insidersの両方に対応しています</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="install-ja" class="installation">
+                <h2>インストール</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>リポジトリをクローン</h3>
+                            <pre><code>git clone https://github.com/neuvecom/vscode-finder-service.git
+cd vscode-finder-service</code></pre>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>インストールスクリプトを実行</h3>
+                            <pre><code>./install.sh</code></pre>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>使用方法</h3>
+                            <ol>
+                                <li>Finderでフォルダを右クリック</li>
+                                <li>「サービス」メニューを選択</li>
+                                <li>「Open with VS Code」または「Open with VS Code Insiders」を選択</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="troubleshooting">
+                <h2>トラブルシューティング</h2>
+
+                <div class="faq-item">
+                    <h3>サービスが表示されない場合</h3>
+                    <div class="faq-content">
+                        <h4>1. システム環境設定での確認</h4>
+                        <p>システム環境設定 > キーボード > ショートカット > サービス で、「Open with VS Code」と「Open with VS Code Insiders」にチェックが入っているか確認してください。</p>
+
+                        <h4>2. VS Codeコマンドの確認</h4>
+                        <pre><code>which code
+which code-insiders</code></pre>
+                        <p>コマンドが見つからない場合は、シンボリックリンクを作成：</p>
+                        <pre><code># VS Code
+sudo ln -sf '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' /usr/local/bin/code
+
+# VS Code Insiders
+sudo ln -sf '/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin/code' /usr/local/bin/code-insiders</code></pre>
+
+                        <h4>3. サービスキャッシュの更新</h4>
+                        <pre><code>/System/Library/CoreServices/pbs -flush
+killall Finder</code></pre>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3>動作しない場合</h3>
+                    <div class="faq-content">
+                        <h4>ログの確認</h4>
+                        <pre><code>log stream --predicate 'process == "Finder"' --level debug</code></pre>
+
+                        <h4>権限の確認</h4>
+                        <pre><code>ls -la ~/Library/Services/</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="technical">
+                <h2>技術詳細</h2>
+                <p>このサービスは、macOSのAutomatorワークフローとして実装されています：</p>
+                <ul>
+                    <li><strong>入力:</strong> フォルダまたはディレクトリ</li>
+                    <li><strong>処理:</strong> シェルスクリプトでVS Codeコマンドを実行</li>
+                    <li><strong>出力:</strong> なし（VS Codeでフォルダが開かれる）</li>
+                </ul>
+                <p>ワークフローは<code>~/Library/Services/</code>に配置され、Finderのコンテキストメニューに自動的に表示されます。</p>
+            </div>
+
+            <div class="uninstall">
+                <h2>アンインストール</h2>
+                <pre><code>./uninstall.sh</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- English Section -->
+    <section id="english" class="content-section" style="display: none;">
+        <div class="container">
+            <div class="hero">
+                <h2>Launch VS Code from macOS Finder with One Click</h2>
+                <p>A macOS Finder service that adds "Open with VS Code" and "Open with VS Code Insiders" options to the right-click context menu for folders.</p>
+                <div class="cta-buttons">
+                    <a href="https://github.com/neuvecom/vscode-finder-service" class="btn btn-primary">Download on GitHub</a>
+                    <a href="#install-en" class="btn btn-secondary">Installation Guide</a>
+                </div>
+            </div>
+
+            <div class="features">
+                <h2>Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>🚀 Easy Launch</h3>
+                        <p>Launch VS Code directly from Finder's right-click menu</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>⚡ Fast Access</h3>
+                        <p>Open selected folders instantly without opening Terminal</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🔧 Dual Version Support</h3>
+                        <p>Supports both VS Code and VS Code Insiders</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="install-en" class="installation">
+                <h2>Installation</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Clone the repository</h3>
+                            <pre><code>git clone https://github.com/neuvecom/vscode-finder-service.git
+cd vscode-finder-service</code></pre>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Run the installation script</h3>
+                            <pre><code>./install.sh</code></pre>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Usage</h3>
+                            <ol>
+                                <li>Right-click on a folder in Finder</li>
+                                <li>Select "Services" menu</li>
+                                <li>Choose "Open with VS Code" or "Open with VS Code Insiders"</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="troubleshooting">
+                <h2>Troubleshooting</h2>
+
+                <div class="faq-item">
+                    <h3>Services don't appear in the menu</h3>
+                    <div class="faq-content">
+                        <h4>1. Check System Preferences</h4>
+                        <p>System Preferences > Keyboard > Shortcuts > Services - Ensure "Open with VS Code" and "Open with VS Code Insiders" are checked.</p>
+
+                        <h4>2. Check VS Code command line tools</h4>
+                        <pre><code>which code
+which code-insiders</code></pre>
+                        <p>If commands are not found, create symbolic links:</p>
+                        <pre><code># VS Code
+sudo ln -sf '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' /usr/local/bin/code
+
+# VS Code Insiders
+sudo ln -sf '/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin/code' /usr/local/bin/code-insiders</code></pre>
+
+                        <h4>3. Refresh services cache</h4>
+                        <pre><code>/System/Library/CoreServices/pbs -flush
+killall Finder</code></pre>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Service doesn't work</h3>
+                    <div class="faq-content">
+                        <h4>Check logs</h4>
+                        <pre><code>log stream --predicate 'process == "Finder"' --level debug</code></pre>
+
+                        <h4>Check permissions</h4>
+                        <pre><code>ls -la ~/Library/Services/</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="technical">
+                <h2>Technical Details</h2>
+                <p>This service is implemented as a macOS Automator workflow:</p>
+                <ul>
+                    <li><strong>Input:</strong> Folder or directory</li>
+                    <li><strong>Process:</strong> Execute VS Code command via shell script</li>
+                    <li><strong>Output:</strong> None (folder opens in VS Code)</li>
+                </ul>
+                <p>Workflows are placed in <code>~/Library/Services/</code> and automatically appear in Finder's context menu.</p>
+            </div>
+
+            <div class="uninstall">
+                <h2>Uninstallation</h2>
+                <pre><code>./uninstall.sh</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 VS Code Finder Service. Licensed under the MIT License.</p>
+            <p>
+                <a href="https://github.com/neuvecom/vscode-finder-service">GitHub</a> |
+                <a href="https://github.com/neuvecom/vscode-finder-service/issues">Issues</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // 言語切り替え機能
+        const langLinks = document.querySelectorAll('.lang-switch a');
+        const sections = document.querySelectorAll('.content-section');
+
+        langLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetLang = link.getAttribute('href').substring(1);
+
+                // アクティブなリンクを更新
+                langLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+
+                // セクションの表示/非表示を切り替え
+                sections.forEach(section => {
+                    if (section.id === targetLang) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // スムーズスクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#install-') || href.startsWith('#troubleshooting')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
