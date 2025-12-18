@@ -59,28 +59,6 @@ if [ -n "$VS_CODE_PATH" ]; then
     sed "s|/usr/local/bin/code|$VS_CODE_PATH|g" "VSCode-document.wflow" > "$VS_CODE_WORKFLOW/Contents/document.wflow"
     
     echo -e "${GREEN}✓ VS Code サービスがインストールされました${NC}"
-
-    # VS Code (neuvecom プロファイル) サービスの作成
-    echo -e "${YELLOW}VS Code (neuvecom) サービスをインストール中...${NC}"
-
-    VS_CODE_NEUVECOM_WORKFLOW="$SERVICES_DIR/Open with VS Code (neuvecom).workflow"
-    mkdir -p "$VS_CODE_NEUVECOM_WORKFLOW/Contents"
-
-    cp "VSCode-neuvecom-Info.plist" "$VS_CODE_NEUVECOM_WORKFLOW/Contents/Info.plist"
-    sed "s|/usr/local/bin/code|$VS_CODE_PATH|g" "VSCode-neuvecom-document.wflow" > "$VS_CODE_NEUVECOM_WORKFLOW/Contents/document.wflow"
-
-    echo -e "${GREEN}✓ VS Code (neuvecom) サービスがインストールされました${NC}"
-
-    # VS Code (ss-yoshiharu-sato プロファイル) サービスの作成
-    echo -e "${YELLOW}VS Code (ss-yoshiharu-sato) サービスをインストール中...${NC}"
-
-    VS_CODE_SS_WORKFLOW="$SERVICES_DIR/Open with VS Code (ss-yoshiharu-sato).workflow"
-    mkdir -p "$VS_CODE_SS_WORKFLOW/Contents"
-
-    cp "VSCode-ss-yoshiharu-sato-Info.plist" "$VS_CODE_SS_WORKFLOW/Contents/Info.plist"
-    sed "s|/usr/local/bin/code|$VS_CODE_PATH|g" "VSCode-ss-yoshiharu-sato-document.wflow" > "$VS_CODE_SS_WORKFLOW/Contents/document.wflow"
-
-    echo -e "${GREEN}✓ VS Code (ss-yoshiharu-sato) サービスがインストールされました${NC}"
 else
     echo -e "${RED}✗ VS Code が見つからないため、スキップします${NC}"
     echo -e "${YELLOW}  VS Codeをインストールするか、シンボリックリンクを作成してください：${NC}"
@@ -102,6 +80,28 @@ if [ -n "$VS_CODE_INSIDERS_PATH" ]; then
     sed "s|/usr/local/bin/code-insiders|$VS_CODE_INSIDERS_PATH|g" "VSCodeInsiders-document.wflow" > "$VS_CODE_INSIDERS_WORKFLOW/Contents/document.wflow"
     
     echo -e "${GREEN}✓ VS Code Insiders サービスがインストールされました${NC}"
+
+    # VS Code Insiders (neuvecom プロファイル) サービスの作成
+    echo -e "${YELLOW}VS Code Insiders (neuvecom) サービスをインストール中...${NC}"
+
+    VS_CODE_INSIDERS_NEUVECOM_WORKFLOW="$SERVICES_DIR/Open with VS Code Insiders (neuvecom).workflow"
+    mkdir -p "$VS_CODE_INSIDERS_NEUVECOM_WORKFLOW/Contents"
+
+    cp "VSCodeInsiders-neuvecom-Info.plist" "$VS_CODE_INSIDERS_NEUVECOM_WORKFLOW/Contents/Info.plist"
+    sed "s|/usr/local/bin/code-insiders|$VS_CODE_INSIDERS_PATH|g" "VSCodeInsiders-neuvecom-document.wflow" > "$VS_CODE_INSIDERS_NEUVECOM_WORKFLOW/Contents/document.wflow"
+
+    echo -e "${GREEN}✓ VS Code Insiders (neuvecom) サービスがインストールされました${NC}"
+
+    # VS Code Insiders (ss-yoshiharu-sato プロファイル) サービスの作成
+    echo -e "${YELLOW}VS Code Insiders (ss-yoshiharu-sato) サービスをインストール中...${NC}"
+
+    VS_CODE_INSIDERS_SS_WORKFLOW="$SERVICES_DIR/Open with VS Code Insiders (ss-yoshiharu-sato).workflow"
+    mkdir -p "$VS_CODE_INSIDERS_SS_WORKFLOW/Contents"
+
+    cp "VSCodeInsiders-ss-yoshiharu-sato-Info.plist" "$VS_CODE_INSIDERS_SS_WORKFLOW/Contents/Info.plist"
+    sed "s|/usr/local/bin/code-insiders|$VS_CODE_INSIDERS_PATH|g" "VSCodeInsiders-ss-yoshiharu-sato-document.wflow" > "$VS_CODE_INSIDERS_SS_WORKFLOW/Contents/document.wflow"
+
+    echo -e "${GREEN}✓ VS Code Insiders (ss-yoshiharu-sato) サービスがインストールされました${NC}"
 else
     echo -e "${RED}✗ VS Code Insiders が見つからないため、スキップします${NC}"
     echo -e "${YELLOW}  VS Code Insidersをインストールするか、シンボリックリンクを作成してください：${NC}"
@@ -121,9 +121,9 @@ echo -e "${YELLOW}使用方法：${NC}"
 echo -e "1. Finderでフォルダを右クリック"
 echo -e "2. 'サービス' メニューから以下のいずれかを選択："
 echo -e "   - 'Open with VS Code'"
-echo -e "   - 'Open with VS Code (neuvecom)'"
-echo -e "   - 'Open with VS Code (ss-yoshiharu-sato)'"
 echo -e "   - 'Open with VS Code Insiders'"
+echo -e "   - 'Open with VS Code Insiders (neuvecom)'"
+echo -e "   - 'Open with VS Code Insiders (ss-yoshiharu-sato)'"
 echo -e ""
 echo -e "${YELLOW}注意：${NC}"
 echo -e "サービスが表示されない場合は、以下を確認してください："

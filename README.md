@@ -9,9 +9,9 @@ A macOS Finder service that adds "Open with VS Code" and "Open with VS Code Insi
 ### Features
 
 - **Open with VS Code**: Open selected folder in VS Code
-- **Open with VS Code (neuvecom)**: Open with VS Code using the "neuvecom" profile
-- **Open with VS Code (ss-yoshiharu-sato)**: Open with VS Code using the "ss-yoshiharu-sato" profile
 - **Open with VS Code Insiders**: Open selected folder in VS Code Insiders
+- **Open with VS Code Insiders (neuvecom)**: Open with VS Code Insiders using the "neuvecom" profile
+- **Open with VS Code Insiders (ss-yoshiharu-sato)**: Open with VS Code Insiders using the "ss-yoshiharu-sato" profile
 
 ### Installation
 
@@ -32,9 +32,9 @@ A macOS Finder service that adds "Open with VS Code" and "Open with VS Code Insi
 2. Select "Services" menu
 3. Choose one of:
    - "Open with VS Code"
-   - "Open with VS Code (neuvecom)"
-   - "Open with VS Code (ss-yoshiharu-sato)"
    - "Open with VS Code Insiders"
+   - "Open with VS Code Insiders (neuvecom)"
+   - "Open with VS Code Insiders (ss-yoshiharu-sato)"
 
 ### Requirements
 
@@ -88,9 +88,9 @@ Finderでディレクトリを選択した状態で、右クリックメニュ�
 ## 機能
 
 - **Open with VS Code**: 選択したフォルダをVS Codeで開く
-- **Open with VS Code (neuvecom)**: 「neuvecom」プロファイルでVS Codeを開く
-- **Open with VS Code (ss-yoshiharu-sato)**: 「ss-yoshiharu-sato」プロファイルでVS Codeを開く
 - **Open with VS Code Insiders**: 選択したフォルダをVS Code Insidersで開く
+- **Open with VS Code Insiders (neuvecom)**: 「neuvecom」プロファイルでVS Code Insidersを開く
+- **Open with VS Code Insiders (ss-yoshiharu-sato)**: 「ss-yoshiharu-sato」プロファイルでVS Code Insidersを開く
 
 ## インストール
 
@@ -111,9 +111,9 @@ Finderでディレクトリを選択した状態で、右クリックメニュ�
 2. 「サービス」メニューを選択
 3. 以下のいずれかを選択：
    - 「Open with VS Code」
-   - 「Open with VS Code (neuvecom)」
-   - 「Open with VS Code (ss-yoshiharu-sato)」
    - 「Open with VS Code Insiders」
+   - 「Open with VS Code Insiders (neuvecom)」
+   - 「Open with VS Code Insiders (ss-yoshiharu-sato)」
 
 ## トラブルシューティング
 
@@ -170,12 +170,12 @@ Finderでディレクトリを選択した状態で、右クリックメニュ�
 - `uninstall.sh`: アンインストールスクリプト
 - `VSCode-Info.plist`: VS Code サービス設定ファイル
 - `VSCode-document.wflow`: VS Code ワークフロー定義
-- `VSCode-neuvecom-Info.plist`: VS Code (neuvecom) サービス設定ファイル
-- `VSCode-neuvecom-document.wflow`: VS Code (neuvecom) ワークフロー定義
-- `VSCode-ss-yoshiharu-sato-Info.plist`: VS Code (ss-yoshiharu-sato) サービス設定ファイル
-- `VSCode-ss-yoshiharu-sato-document.wflow`: VS Code (ss-yoshiharu-sato) ワークフロー定義
 - `VSCodeInsiders-Info.plist`: VS Code Insiders サービス設定ファイル
 - `VSCodeInsiders-document.wflow`: VS Code Insiders ワークフロー定義
+- `VSCodeInsiders-neuvecom-Info.plist`: VS Code Insiders (neuvecom) サービス設定ファイル
+- `VSCodeInsiders-neuvecom-document.wflow`: VS Code Insiders (neuvecom) ワークフロー定義
+- `VSCodeInsiders-ss-yoshiharu-sato-Info.plist`: VS Code Insiders (ss-yoshiharu-sato) サービス設定ファイル
+- `VSCodeInsiders-ss-yoshiharu-sato-document.wflow`: VS Code Insiders (ss-yoshiharu-sato) ワークフロー定義
 
 ## 技術詳細
 

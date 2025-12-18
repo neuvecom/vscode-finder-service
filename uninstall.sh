@@ -17,8 +17,8 @@ SERVICES_DIR="$HOME/Library/Services"
 SERVICES_TO_REMOVE=(
     "Open with VS Code.workflow"
     "Open with VS Code Insiders.workflow"
-    "Open with VS Code (neuvecom).workflow"
-    "Open with VS Code (ss-yoshiharu-sato).workflow"
+    "Open with VS Code Insiders (neuvecom).workflow"
+    "Open with VS Code Insiders (ss-yoshiharu-sato).workflow"
     "VS Codeで開く.workflow"
 )
 

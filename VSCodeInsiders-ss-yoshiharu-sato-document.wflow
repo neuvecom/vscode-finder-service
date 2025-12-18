@@ -61,7 +61,7 @@
 					<key>COMMAND_STRING</key>
 					<string>for f in "$@"
 do
-	/usr/local/bin/code --profile "neuvecom" "$f"
+	/usr/local/bin/code-insiders --profile "ss-yoshiharu-sato" "$f"
 done</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
@@ -99,7 +99,7 @@ done</string>
 				<key>OutputUUID</key>
 				<string>A5BBDEEF-E9A1-473B-A3C5-79BCFF4C506D</string>
 				<key>UUID</key>
-				<string>3DCCAAA1-4D9C-47CC-ADE4-FD8B4A2AE0D5</string>
+				<string>3DCCAAA1-4D9C-47CC-ADE4-FD8B4A2AE0D6</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Automator</string>

@@ -23,11 +23,11 @@
 	<key>CFBundleIconFile</key>
 	<string>AutomatorApplet</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.apple.automator.OpenWithVSCodeSsYoshiharuSato</string>
+	<string>com.apple.automator.OpenWithVSCodeInsidersNeuvecom</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Open with VS Code (ss-yoshiharu-sato)</string>
+	<string>Open with VS Code Insiders (neuvecom)</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -52,7 +52,7 @@
 			<key>NSMenuItem</key>
 			<dict>
 				<key>default</key>
-				<string>Open with VS Code (ss-yoshiharu-sato)</string>
+				<string>Open with VS Code Insiders (neuvecom)</string>
 			</dict>
 			<key>NSMessage</key>
 			<string>runWorkflowAsService</string>
