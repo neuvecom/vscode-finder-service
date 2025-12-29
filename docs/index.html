@@ -23,9 +23,9 @@
     </header>
 
     <!-- 広告バナー表示エリア -->
-    <div class="ad-banner-section">
+    <div class="sponsor-section">
         <div class="container">
-            <div id="header-ad-container"></div>
+            <div id="header-banner"></div>
         </div>
     </div>
 
@@ -289,9 +289,9 @@ killall Finder</code></pre>
             });
 
             // ヘッダー広告を描画
-            const headerAdContainer = document.getElementById('header-ad-container');
-            if (headerAdContainer) {
-                bannerManager.render(headerAdContainer, 'header');
+            const headerBanner = document.getElementById('header-banner');
+            if (headerBanner) {
+                bannerManager.render(headerBanner, 'header');
             }
 
             // アドブロック検出の初期化
