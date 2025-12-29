@@ -78,6 +78,23 @@ header .subtitle {
     color: var(--primary-color);
 }
 
+/* 広告バナーセクション */
+.ad-banner-section {
+    background-color: var(--bg-light);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ad-banner-section .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header-ad-container {
+    min-height: 60px;
+}
+
 /* ヒーローセクション */
 .hero {
     text-align: center;

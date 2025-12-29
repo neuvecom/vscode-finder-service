@@ -6,6 +6,9 @@
     <meta name="description" content="VS Code Finder Service - macOS Finderの右クリックメニューからVS Codeでフォルダを開くサービス">
     <title>VS Code Finder Service</title>
     <link rel="stylesheet" href="style.css">
+    <!-- アフィリエイト広告用CSS -->
+    <link rel="stylesheet" href="common/css/affiliate.css">
+    <link rel="stylesheet" href="common/css/fallback.css">
 </head>
 <body>
     <header>
@@ -18,6 +21,13 @@
             </div>
         </div>
     </header>
+
+    <!-- 広告バナー表示エリア -->
+    <div class="ad-banner-section">
+        <div class="container">
+            <div id="header-ad-container"></div>
+        </div>
+    </div>
 
     <!-- 日本語セクション -->
     <section id="japanese" class="content-section">
@@ -263,7 +273,35 @@ killall Finder</code></pre>
         </div>
     </footer>
 
+    <!-- アフィリエイト広告用JS -->
+    <script src="common/js/affiliate-lite.js"></script>
+    <script src="common/js/adblock-detector.js"></script>
+
     <script>
+        // 広告バナーの初期化
+        document.addEventListener('DOMContentLoaded', function() {
+            // バナーマネージャーの初期化
+            const bannerManager = new NeuvecomAffiliateBanner({
+                sid: '3757792',
+                storageKeyPrefix: 'vscode-finder-service',
+                configPath: '/data/affiliates.yaml',
+                fallbackImagesPath: '/img/'
+            });
+
+            // ヘッダー広告を描画
+            const headerAdContainer = document.getElementById('header-ad-container');
+            if (headerAdContainer) {
+                bannerManager.render(headerAdContainer, 'header');
+            }
+
+            // アドブロック検出の初期化
+            const adBlockDetector = new NeuvecomAdBlockDetector({
+                storageKeyPrefix: 'vscode-finder-service',
+                fallbackImagesPath: '/img/'
+            });
+            adBlockDetector.init();
+        });
+
         // 言語切り替え機能
         const langLinks = document.querySelectorAll('.lang-switch a');
         const sections = document.querySelectorAll('.content-section');
