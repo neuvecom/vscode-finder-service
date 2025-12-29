@@ -284,8 +284,8 @@ killall Finder</code></pre>
             const bannerManager = new NeuvecomAffiliateBanner({
                 sid: '3757792',
                 storageKeyPrefix: 'vscode-finder-service',
-                configPath: '/data/affiliates.yaml',
-                fallbackImagesPath: '/img/'
+                configPath: 'data/affiliates.yaml',
+                fallbackImagesPath: 'img/'
             });
 
             // ヘッダー広告を描画
@@ -297,7 +297,7 @@ killall Finder</code></pre>
             // アドブロック検出の初期化
             const adBlockDetector = new NeuvecomAdBlockDetector({
                 storageKeyPrefix: 'vscode-finder-service',
-                fallbackImagesPath: '/img/'
+                fallbackImagesPath: 'img/'
             });
             adBlockDetector.init();
         });
