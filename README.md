@@ -176,6 +176,8 @@ Finderでディレクトリを選択した状態で、右クリックメニュ�
 - `VSCodeInsiders-neuvecom-document.wflow`: VS Code Insiders (neuvecom) ワークフロー定義
 - `VSCodeInsiders-ss-yoshiharu-sato-Info.plist`: VS Code Insiders (ss-yoshiharu-sato) サービス設定ファイル
 - `VSCodeInsiders-ss-yoshiharu-sato-document.wflow`: VS Code Insiders (ss-yoshiharu-sato) ワークフロー定義
+- `docs/`: GitHub Pagesサイト
+- `.github/workflows/deploy.yml`: GitHub Actionsデプロイワークフロー
 
 ## 技術詳細
 
@@ -186,3 +188,14 @@ Finderでディレクトリを選択した状態で、右クリックメニュ�
 - **出力**: なし（VS Codeでフォルダが開かれる）
 
 ワークフローは`~/Library/Services/`に配置され、Finderのコンテキストメニューに自動的に表示されます。
+
+## GitHub Pages
+
+ドキュメントサイトはGitHub Pagesで公開されています：
+https://neuvecom.github.io/vscode-finder-service/
+
+### デプロイ
+
+- GitHub Actionsによる自動デプロイ
+- mainブランチへのプッシュで自動的にデプロイ
+- プライベートサブモジュール（neuvecom-common）を使用
