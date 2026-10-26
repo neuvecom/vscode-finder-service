@@ -198,4 +198,3 @@ https://neuvecom.github.io/vscode-finder-service/
 
 - GitHub Actionsによる自動デプロイ
 - mainブランチへのプッシュで自動的にデプロイ
-- プライベートサブモジュール（neuvecom-common）を使用

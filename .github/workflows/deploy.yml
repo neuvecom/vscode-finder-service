@@ -1,5 +1,4 @@
 # GitHub Pages デプロイワークフロー
-# プライベートサブモジュール対応
 
 name: Deploy to GitHub Pages
 
@@ -27,11 +26,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Checkout submodules
-        run: |
-          git config --global url."https://x-access-token:${{ secrets.SUBMODULE_PAT }}@github.com/".insteadOf "https://github.com/"
-          git submodule update --init --recursive
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
