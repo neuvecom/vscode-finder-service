@@ -6,9 +6,6 @@
     <meta name="description" content="VS Code Finder Service - macOS Finderの右クリックメニューからVS Codeでフォルダを開くサービス">
     <title>VS Code Finder Service</title>
     <link rel="stylesheet" href="style.css">
-    <!-- アフィリエイト広告用CSS -->
-    <link rel="stylesheet" href="common/css/affiliate.css">
-    <link rel="stylesheet" href="common/css/fallback.css">
 </head>
 <body>
     <header>
@@ -22,12 +19,6 @@
         </div>
     </header>
 
-    <!-- 広告バナー表示エリア -->
-    <div class="sponsor-section">
-        <div class="container">
-            <div id="header-banner"></div>
-        </div>
-    </div>
 
     <!-- 日本語セクション -->
     <section id="japanese" class="content-section">
@@ -265,6 +256,11 @@ killall Finder</code></pre>
 
     <footer>
         <div class="container">
+            <div class="footer-kofi">
+                <kofi-banner user="otasuke">
+                    <a href="https://ko-fi.com/otasuke" target="_blank" rel="noopener">Ko-fi で制作者を支援する</a>
+                </kofi-banner>
+            </div>
             <p>&copy; 2024 VS Code Finder Service. Licensed under the MIT License.</p>
             <p>
                 <a href="https://github.com/neuvecom/vscode-finder-service">GitHub</a> |
@@ -273,35 +269,10 @@ killall Finder</code></pre>
         </div>
     </footer>
 
-    <!-- アフィリエイト広告用JS -->
-    <script src="common/js/affiliate-lite.js"></script>
-    <script src="common/js/adblock-detector.js"></script>
+    <!-- Ko-fi 支援バナー（neuvecom/kofi-banner） -->
+    <script src="https://cdn.jsdelivr.net/gh/neuvecom/kofi-banner@v1.0.0/kofi-banner.js" defer></script>
 
     <script>
-        // 広告バナーの初期化
-        document.addEventListener('DOMContentLoaded', function() {
-            // バナーマネージャーの初期化
-            const bannerManager = new NeuvecomAffiliateBanner({
-                sid: '3757792',
-                storageKeyPrefix: 'vscode-finder-service',
-                configPath: 'data/affiliates.yaml',
-                fallbackImagesPath: 'img/'
-            });
-
-            // ヘッダー広告を描画
-            const headerBanner = document.getElementById('header-banner');
-            if (headerBanner) {
-                bannerManager.render(headerBanner, 'header');
-            }
-
-            // アドブロック検出の初期化
-            const adBlockDetector = new NeuvecomAdBlockDetector({
-                storageKeyPrefix: 'vscode-finder-service',
-                fallbackImagesPath: 'img/'
-            });
-            adBlockDetector.init();
-        });
-
         // 言語切り替え機能
         const langLinks = document.querySelectorAll('.lang-switch a');
         const sections = document.querySelectorAll('.content-section');
